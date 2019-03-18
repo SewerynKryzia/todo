@@ -1,0 +1,16 @@
+{
+  "main.css": "/todo/static/css/main.e0f1c2e8.chunk.css",
+  "main.js": "/todo/static/js/main.423ea595.chunk.js",
+  "main.js.map": "/todo/static/js/main.423ea595.chunk.js.map",
+  "runtime~main.js": "/todo/static/js/runtime~main.3b16784f.js",
+  "runtime~main.js.map": "/todo/static/js/runtime~main.3b16784f.js.map",
+  "static/css/2.fcb749c0.chunk.css": "/todo/static/css/2.fcb749c0.chunk.css",
+  "static/js/2.ca90157c.chunk.js": "/todo/static/js/2.ca90157c.chunk.js",
+  "static/js/2.ca90157c.chunk.js.map": "/todo/static/js/2.ca90157c.chunk.js.map",
+  "index.html": "/todo/index.html",
+  "precache-manifest.49549e8d66455a56ba292dcfc1d51201.js": "/todo/precache-manifest.49549e8d66455a56ba292dcfc1d51201.js",
+  "service-worker.js": "/todo/service-worker.js",
+  "static/css/2.fcb749c0.chunk.css.map": "/todo/static/css/2.fcb749c0.chunk.css.map",
+  "static/css/main.e0f1c2e8.chunk.css.map": "/todo/static/css/main.e0f1c2e8.chunk.css.map",
+  "static/media/all.css": "/todo/static/media/fa-solid-900.b70cea03.ttf"
+}
