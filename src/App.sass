@@ -1,0 +1,224 @@
+$font-family: Montserrat, sans-serif
+$btn-bgc: #5A6169
+// #74546A
+$impt-normal-color: rgb(252, 228, 18)
+$impt-high-color: rgb(212, 90, 3)
+$impt-veryHigh-color: rgb(158, 15, 58)
+$media-break: 700px
+=button-style($bgc,$brad)
+    background-color: $bgc
+    color: white
+    cursor: pointer
+    border: none
+    border-radius: $brad
+    font-weight: 600
+    overflow: hidden
+
+=button-effect
+    content: ""
+    position: absolute
+    background-color: #553D36
+    width: 100%
+    height: 10%
+    left: 100%
+    top: 50%
+    transform: translateY(-50%)
+    transition: left .2s linear, height .2s linear .2s
+    z-index: -1
+
+*
+    margin: 0px
+    padding: 0px
+    box-sizing: border-box
+    div.todo-app
+        font-family: $font-family
+        overflow: hidden
+        min-width: 520px
+        max-width: 1000px
+        margin-top: 3vh
+        margin-left: 50%
+        transform: translateX(-50%)
+        @media screen and (max-width: $media-break)
+            min-width: 360px
+            width: 90%
+            margin-left: 2.5%
+            margin-right: 2.5%
+            transform: translateX(0%)
+            padding-left: 2%
+            padding-right: 2%
+        h1
+            text-align: center
+            margin-bottom: 3vh
+        form.add-task
+            margin-bottom: 2vh
+            input.input-task-name
+                width: 70%
+                // @media screen and (max-width: $media-break)
+                //     width: 90%
+                height: 35px
+                margin-left: 50%
+                transform: translateX(-50%)
+                font-size: 22px
+                text-align: center
+                border-radius: 3px
+                border: 1px solid rgba(0, 0, 0, .2)
+            .importance
+                float: left
+                width: 25%
+                margin-left: 20%
+                .importance-title
+                    display: block
+                    margin: 12px 0
+                    font-weight: 600
+                .container
+                    display: block
+                    position: relative
+                    padding-left: 32px
+                    margin-bottom: 12px
+                    cursor: pointer
+                    font-size: 15px
+                    -webkit-user-select: none
+                    -moz-user-select: none
+                    -ms-user-select: none
+                    user-select: none
+                    &:hover input ~ .checkmark
+                        background-color: #ccc
+                    input
+                        position: absolute
+                        opacity: 0
+                        cursor: pointer
+                        &:checked ~ .normal
+                            background-color: $impt-normal-color
+                        &:checked ~ .high
+                            background-color: $impt-high-color
+                        &:checked ~ .veryHigh
+                            background-color: $impt-veryHigh-color
+                    .checkmark
+                        position: absolute
+                        top: 0
+                        left: 0
+                        height: 20px
+                        width: 20px
+                        background-color: #eee
+                        border-radius: 3px
+            span.deadline-title
+                float: right
+                width: 30%
+                margin: 12px 15% 12px 0
+                font-weight: 600
+            input.input-task-deadline
+                float: right
+                width: 30%
+                font-size: 16px
+                margin-right: 15%
+                padding-left: 15px
+            button
+                width: 60%
+                height: 45px
+                font-size: 22px
+                margin: 20px 0 20px 50%
+                transform: translateX(-50%)
+                +button-style($btn-bgc,3px)
+                &::after
+                    +button-effect
+                &:hover::after
+                    left: 0
+                    height: 101%
+        .task-list
+            h4.list-title
+                font-size: 25px
+                text-align: center
+            .sort
+                text-align: center
+                button
+                    position: relative
+                    width: 28%
+                    height: 45px
+                    font-size: 14px
+                    margin: 20px 1%
+                    z-index: 0
+                    @media screen and (max-width: $media-break)
+                        margin: 10px 1%
+                    +button-style($btn-bgc,3px)
+                    &::after
+                        +button-effect
+                    &:hover::after
+                        left: 0
+                        height: 101%
+            .active-task, .inactive-task
+                position: relative
+                background-color: white
+                min-height: 60px
+                margin: 20px 0
+                display: flex
+                align-items: center
+                border-radius: 3px
+                border: 1px solid rgba(0, 0, 0, .2)
+                p
+                    position: absolute
+                    top: 50%
+                    left: 65%
+                    @media screen and (max-width: $media-break)
+                        left: 50%
+                        font-size: 12px
+                    color: #000000
+                    transform: translateY(-50%)
+                    text-align: center
+                    span:first-child
+                        text-transform: uppercase
+                        font-size: 9px
+                        display: block
+                button
+                    position: absolute
+                    top: 50%
+                    +button-style($btn-bgc,5px)
+                    width: 40px
+                    height: 40px
+                    font-size: 15px
+                    transform: translateY(-50%)
+                    transition: background-color .3s
+                .done-btn
+                    right: 53px
+                    background-color: rgba(107, 162, 146, 1)
+                    &:hover
+                        background-color: rgba(107, 162, 146, .9)
+                .remove-btn
+                    right: 9px
+                    background-color: rgba(200, 38, 78, 1)
+                    &:hover
+                        background-color: rgba(200, 38, 78, .9)
+                .undo-btn
+                    right: 53px
+                    background-color: rgba(119, 98, 88, 1)
+                    &:hover
+                        background-color: rgba(119, 98, 88, .9)
+            .active-task h3, .inactive-task h4
+                padding: 15px 0
+                position: relative
+                word-wrap: break-word
+                top: 50%
+                left: 15px
+                width: 60%
+                @media screen and (max-width: $media-break)
+                    width: 43%
+                    font-size: 14px
+                color: black
+            .inactive-task
+                border-left: 4px solid rgb(187, 187, 187)
+                h4
+                text-decoration: line-through
+                font-weight: 400
+            .no-task
+                height: 60px
+                margin: 20px 0
+                border-radius: 3px
+                border: 1px solid rgba(0, 0, 0, .2)
+                text-align: center
+                font-size: 25px
+                line-height: 60px
+            .importance1
+                border-left: 4px solid $impt-normal-color
+            .importance2
+                border-left: 4px solid $impt-high-color
+            .importance3
+                border-left: 4px solid $impt-veryHigh-color
